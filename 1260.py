@@ -21,7 +21,6 @@ def dfs(graph, start):
     for i in range(len(visited)):
         print(visited[i], end = " ")
     print()
-        
     return None
 
 def bfs(graph, start):
@@ -45,7 +44,6 @@ def bfs(graph, start):
     for i in range(len(visited)):
         print(visited[i], end = " ")
     print()
-        
     return None
 
 if __name__ == "__main__":
