@@ -1,7 +1,5 @@
 import sys
 from collections import deque
-n, m, v = map(int, sys.stdin.readline().split())
-graph = {x+1: [] for x in range(n)}
 
 def dfs(graph, start):
     
@@ -51,6 +49,9 @@ def bfs(graph, start):
     return None
 
 if __name__ == "__main__":
+    n, m, v = map(int, sys.stdin.readline().split())
+    graph = {x+1: [] for x in range(n)}
+    
     for _ in range(m):
         a, b = map(int, sys.stdin.readline().split())
         graph[a].append(b)
