@@ -21,7 +21,7 @@ def sin(x):
 a, b, c = map(Decimal, map(int, input().split()))
 lo = Decimal('0')
 hi = Decimal('100000')
-cnt = 100
+cnt = 85
 
 while cnt > 0:
     mid = (lo + hi) / 2
