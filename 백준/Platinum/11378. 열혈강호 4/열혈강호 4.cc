@@ -31,6 +31,7 @@ int main(void){
 	int n, mm, k;
     cin >> n >> mm >> k;
     adj[source].push_back(source2); // 역방향 연결 해줘야 할까?
+    adj[source2].push_back(source);
     for (int i = 1; i <= n; i++) {
         adj[source].push_back(i);
         adj[i].push_back(source);
