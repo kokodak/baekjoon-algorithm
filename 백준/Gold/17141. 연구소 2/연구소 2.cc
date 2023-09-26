@@ -10,6 +10,7 @@ int dx[4] = {1, -1, 0, 0};
 int dy[4] = {0, 0, 1, -1};
 vector<pair<int, int>> v;
 bool visited[11];
+bool visited1[51][51];
 
 int bfs() {
 	int tmp[51][51];
@@ -18,6 +19,11 @@ int bfs() {
 		for (int j = 0; j < n; j++) {
 			tmp[i][j] = mmap[i][j];
 			if (tmp[i][j] == 0 || tmp[i][j] == 2) zcnt++;
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			visited1[i][j] = false;
 		}
 	}
 	queue<pair<pair<int, int>, int>> que;
@@ -38,7 +44,9 @@ int bfs() {
 			int nx = x + dx[i];
 			int ny = y + dy[i];
 			if (nx >= n || nx < 0 || ny >= n || ny < 0) continue;
+			if (visited1[nx][ny]) continue;
 			if (tmp[nx][ny] == -1 || tmp[nx][ny] == 1) continue;
+			visited1[nx][ny] = true;
 			tmp[nx][ny] = -1;
 			que.push({{nx, ny}, t + 1});
 			ccnt++;
