@@ -5,5 +5,3 @@ group by mp.member_id having qq = (select max(qq) as qwe from
 (SELECT mp.member_name, rr.review_text, rr.review_date, count(mp.member_id) as qq from member_profile as mp join rest_review as rr on mp.member_id = rr.member_id
 group by mp.member_id) as t)) as qweqwe on mp.member_id = qweqwe.member_id
 order by REVIEW_DATE asc, REVIEW_TEXT asc
-
-
